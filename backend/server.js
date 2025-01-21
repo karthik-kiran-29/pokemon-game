@@ -3,7 +3,6 @@ import mongoose from 'mongoose';
 import  cors from 'cors';
 import 'dotenv/config';
 import { connectDB } from './config/connectDB.js';
-import { initialise } from './controllers/initialiseControllers.js';
 
 connectDB();
 
@@ -11,8 +10,6 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
-
-initialise();
 
 
 app.listen(PORT, () => {
