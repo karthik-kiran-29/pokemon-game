@@ -2,46 +2,133 @@ import mongoose from "mongoose";
 
 const cardSchema = new mongoose.Schema(
     {
-        cardId: { type: String, required: true, unique: true },
-        name: { type: String, required: true, index: true },
-        supertype: { type: String, required: true },
-        subtypes: [String],
-        hp: String,
-        types: [{ type: String, index: true }],
-        evolvesTo: [String],
-        
-        // Reference to which base set this card belongs to
-        baseSetId: { 
-          type: String, 
-          required: true, 
-          ref: 'BaseSet',
-          index: true 
+        id: {
+          type: String,
+          required: true,
+          unique: true
         },
-        
-        attacks: [{
-          name: String,
-          cost: [String],
-          convertedEnergyCost: Number,
-          damage: String,
-          text: String
+        name: {
+          type: String,
+          required: true
+        },
+        supertype: {
+          type: String,
+          required: true
+        },
+        subtypes: [{
+          type: String,
+          required: true
         }],
-        
-        
-        images: {
-          small: String,
-          large: String
+        level: {
+          type: String,
+          required: false
         },
-        
-        // TCG Online specific fields
-        tcgPlayer: {
-          url: String,
-          prices: {
-            normal: Number,
-            holofoil: Number,
-            reverseHolofoil: Number
+        hp: {
+          type: String,
+          required: false
+        },
+        types: [{
+          type: String,
+          required: false
+        }],
+        evolvesFrom: {
+          type: String,
+          required: false
+        },
+        abilities: [{
+          name: {
+            type: String,
+            required: true
           },
-          updatedAt: Date
+          text: {
+            type: String,
+            required: true
+          },
+          type: {
+            type: String,
+            required: true
+          }
+        }],
+        attacks: [{
+          name: {
+            type: String,
+            required: true
+          },
+          cost: [{
+            type: String,
+            required: true
+          }],
+          convertedEnergyCost: {
+            type: Number,
+            required: true
+          },
+          damage: {
+            type: String,
+            required: false
+          },
+          text: {
+            type: String,
+            required: false
+          }
+        }],
+        weaknesses: [{
+          type: {
+            type: String,
+            required: true
+          },
+          value: {
+            type: String,
+            required: true
+          }
+        }],
+        retreatCost: [{
+          type: String,
+          required: false
+        }],
+        convertedRetreatCost: {
+          type: Number,
+          required: false
+        },
+        number: {
+          type: String,
+          required: true
+        },
+        artist: {
+          type: String,
+          required: true
+        },
+        rarity: {
+          type: String,
+          required: false
+        },
+        flavorText: {
+          type: String,
+          required: false
+        },
+        nationalPokedexNumbers: [{
+          type: Number,
+          required: false
+        }],
+        legalities: {
+          unlimited: {
+            type: String,
+            enum: ['Legal', 'Banned', null],
+            default: null
+          }
+        },
+        images: {
+          small: {
+            type: String,
+            required: true
+          },
+          large: {
+            type: String,
+            required: true
+          }
         }
+      }, {
+        timestamps: false,
+        versionKey: false
       }
 );
 
