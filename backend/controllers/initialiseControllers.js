@@ -4,7 +4,7 @@ import { userModel } from "../models/UserModel.js";
 
 const initialise = () =>{
     CardModel.create({
-        "id": "base1-1",
+        "_id": "base1-1",
         "name": "Alakazam",
         "supertype": "Pokémon",
         "subtypes": [
@@ -65,7 +65,7 @@ const initialise = () =>{
       })
 
     baseSetModel.create({
-        "id": "base1",
+        "_id": "base1",
         "name": "Base",
         "series": "Base",
         "printedTotal": 102,
@@ -86,9 +86,9 @@ const initialise = () =>{
         username:"admin",
         email:"karthikkiran029@gmail.com",
         collection:[],
-        checkIn: {streak:0,totalCheckIns:0},
-        stats:{totalCards:0,uniqueCards:0,setsProgress:[{baseSetId:"",completed:0,totalOwned:0}],}
-
+        checkIn: {lastCheckIn:"2016-05-18T16:00:00Z",streak:0,totalCheckIns:0},
+        stats:{totalCards:0,uniqueCards:0,setsProgress:[{baseSetId:"",completed:0,totalOwned:0}]},
+        lastUpdated: "2016-05-18T16:00:00Z"
     })  
 }
 

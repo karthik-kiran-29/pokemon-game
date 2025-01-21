@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const baseSetSchema = new mongoose.Schema(
     {
-        id: {
+        _id: {
           type: String,
           required: true,
           unique: true

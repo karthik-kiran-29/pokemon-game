@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const cardSchema = new mongoose.Schema(
     {
-        id: {
+        _id: {
           type: String,
           required: true,
           unique: true
@@ -35,6 +35,10 @@ const cardSchema = new mongoose.Schema(
           type: String,
           required: false
         },
+        evolvesTo: {
+            type: String,
+            required: false
+          },
         abilities: [{
           name: {
             type: String,
