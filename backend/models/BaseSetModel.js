@@ -20,11 +20,7 @@ const baseSetSchema = new mongoose.Schema(
     images: {
       symbol: String,
       logo: String
-    },
-    
-    // Metadata for performance optimization
-    popularityScore: { type: Number, default: 0 },
-    activeInRotation: { type: Boolean, default: true }
+    }
   });
 
   const baseSetModel = mongoose.model('BaseSet',baseSetSchema);

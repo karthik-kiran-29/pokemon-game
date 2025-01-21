@@ -26,10 +26,6 @@ const cardSchema = new mongoose.Schema(
           text: String
         }],
         
-        // Additional fields for filtering and searching
-        rarity: { type: String, index: true },
-        number: String,
-        artist: String,
         
         images: {
           small: String,
