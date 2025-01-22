@@ -57,7 +57,7 @@
   GET /api/cards
   Query: { name, types, rarity, baseSet, page, limit }
   ```
-- [ ] Get Card Details
+- [x] Get Card Details
   ```
   GET /api/cards/:cardId
   ```
