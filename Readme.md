@@ -52,7 +52,7 @@
   ```
 
 ## 4. Card Search & Filtering
-- [ ] Search Cards
+- [x] Search Cards
   ```
   GET /api/cards
   Query: { name, types, rarity, baseSet, page, limit }
