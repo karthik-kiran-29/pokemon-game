@@ -63,12 +63,12 @@
   ```
 
 ## 5. Base Set Management
-- [ ] List All Base Sets
+- [x] List All Base Sets
   ```
   GET /api/base-sets
   Query: { page, limit, series }
   ```
-- [ ] Get Base Set Details
+- [x] Get Base Set Details
   ```
   GET /api/base-sets/:baseSetId
   Returns: Base set info with cards
