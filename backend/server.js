@@ -5,6 +5,7 @@ import 'dotenv/config';
 import { connectDB } from './config/connectDB.js';
 import router from './routes/CardRoute.js';
 import BaseSetRouter from './routes/BaseSetRoute.js';
+import { UserRouter } from './routes/UserRoute.js';
 
 connectDB();
 
@@ -16,6 +17,8 @@ app.use(express.json());
 app.use('/api/v1',router)
 
 app.use('/api/v1',BaseSetRouter)
+
+app.use('/api/v1',UserRouter)
 
 
 app.listen(PORT, () => {

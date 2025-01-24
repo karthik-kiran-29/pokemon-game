@@ -16,14 +16,14 @@ const getAllBaseSet = async (req,res) =>{
         const total = await baseSetModel.countDocuments(query);
     
         res.json({
-            result: "success",
+            status: "success",
             data: result,
             page,
             totalPages: Math.ceil(total / limit),
             totalItems: total
         });
     } catch (error) {
-        res.status(500).json({ result: "failed", error: error.message })
+        res.status(500).json({ status: "failed", error: error.message })
     }        
 }
 
@@ -31,9 +31,9 @@ const getSingleBaseSet = async (req,res) =>{
     const baseSetId = req.params.baseSetId;
     try {
         const result = await baseSetModel.find({"_id":baseSetId});
-        res.json({result:"success",data:result})
+        res.json({status:"success",data:result})
     } catch (error) {
-        res.status(500).json({ result: "failed", error: error.message });
+        res.status(500).json({ status: "failed", error: error.message });
     }
 }
 

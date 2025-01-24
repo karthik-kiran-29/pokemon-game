@@ -4,9 +4,9 @@ const getSingleCard = async (req,res) =>{
     const cardId = req.params.cardId;
     try {
         const result = await CardModel.find({"_id":cardId});
-        res.json({result:"success",result})
+        res.json({status:"success",result})
     } catch (error) {
-        res.status(500).json({ result: "failed", error: error.message });
+        res.status(500).json({ status: "failed", error: error.message });
     }
 
 }
@@ -32,14 +32,14 @@ const getAllCards = async (req, res) => {
         const total = await CardModel.countDocuments(query);
 
         res.json({
-            result: "success",
+            status: "success",
             data: result,
             page,
             totalPages: Math.ceil(total / limit),
             totalItems: total
         });
     } catch (error) {
-        res.status(500).json({ result: "failed", error: error.message });
+        res.status(500).json({ status: "failed", error: error.message });
     }
 };
 

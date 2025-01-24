@@ -75,7 +75,7 @@
   ```
 
 ## 6. User Profile
-- [ ] Get Profile
+- [x] Get Profile
   ```
   GET /api/profile
   Returns: User info and stats
