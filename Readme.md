@@ -80,7 +80,7 @@
   GET /api/profile
   Returns: User info and stats
   ```
-- [ ] Update Profile
+- [x] Update Profile
   ```
   PUT /api/profile
   Body: { username, email, preferences }
