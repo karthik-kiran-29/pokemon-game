@@ -1,8 +1,9 @@
 import express from 'express';
-import { getUserProfile } from '../controllers/UserControllers.js';
+import { getUserProfile,putUserProfile } from '../controllers/UserControllers.js';
 
 const UserRouter = express.Router();
 
-UserRouter.get("/profile",getUserProfile);
+UserRouter.route("/profile").get(getUserProfile).put(putUserProfile);
+
 
 export {UserRouter};
