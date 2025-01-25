@@ -17,41 +17,8 @@
   Header: Authorization: Bearer <token>
   ```
 
-## 2. Daily Check-in System
-- [ ] Record Daily Check-in
-  ```
-  POST /api/checkin
-  Returns: { success, cards, streak }
-  ```
-- [ ] Get Check-in Status
-  ```
-  GET /api/checkin/status
-  Returns: { lastCheckIn, currentStreak, nextReward }
-  ```
 
-## 3. Card Collection Management
-- [ ] View Collection
-  ```
-  GET /api/collection
-  Query: { page, limit, sort }
-  ```
-- [ ] Add Card to Collection
-  ```
-  POST /api/collection/add
-  Body: { cardId, quantity }
-  ```
-- [ ] Remove Card from Collection
-  ```
-  DELETE /api/collection/remove
-  Body: { cardId, quantity }
-  ```
-- [ ] Get Collection Statistics
-  ```
-  GET /api/collection/stats
-  Returns: { totalCards, uniqueCards, completion }
-  ```
-
-## 4. Card Search & Filtering
+## 2. Card Search & Filtering
 - [x] Search Cards
   ```
   GET /api/cards
@@ -62,7 +29,7 @@
   GET /api/cards/:cardId
   ```
 
-## 5. Base Set Management
+## 3. Base Set Management
 - [x] List All Base Sets
   ```
   GET /api/base-sets
@@ -74,7 +41,8 @@
   Returns: Base set info with cards
   ```
 
-## 6. User Profile
+## 4. User Profile
+
 - [x] Get Profile
   ```
   GET /api/profile
@@ -85,34 +53,32 @@
   PUT /api/profile
   Body: { username, email, preferences }
   ```
-- [ ] View Collection Progress
-  ```
-  GET /api/profile/progress
-  Returns: Completion % by base set
-  ```
 
-## 7. Database Setup
+## 5. Database Setup
 - [x] Base Set Schema Implementation
 - [x] Card Schema Implementation
 - [x] User Schema Implementation
-- [ ] Database Indexing
 
-## 8. Performance Features
+## 6. Performance Features
 - [ ] Redis Caching Implementation
 - [ ] Pagination for List Endpoints
 - [ ] Search Optimization
 - [ ] Request Rate Limiting
 
-## 9. Security Features
+## 7. Security Features
 - [ ] JWT Authentication Implementation
 - [ ] Input Validation
 - [ ] Request Sanitization
 - [ ] Error Handling System
 
-## 10. Frontend Features
+## 8. Frontend Features
 - [ ] Responsive Card Grid
 - [ ] Card Detail Modal
 - [ ] Collection Management UI
 - [ ] Search & Filter Interface
 - [ ] User Profile Dashboard
 - [ ] Check-in Calendar
+
+##Extra features:
+-[ ] /leaderboard for 5 players.
+-[ ] /collection for random 5 cards with updates to userModel details.
