@@ -16,7 +16,7 @@ const Headers = () => {
         <a href="/" className="flex items-center">
           <span className="text-gray-800 font-bold text-lg">Pokémon</span>
         </a>
-        <div className="flex items-center space-x-8 text-gray-600">
+        <div className="flex items-center md:space-x-8 text-gray-600">
           {heading_content.map((content) => (
             <HeaderElement key={content.titleName} {...content} />
           ))}
@@ -37,7 +37,6 @@ const Headers = () => {
               />
             </svg>
           </button>
-          <label for="search">Search</label>
           <button className="text-gray-600 hover:text-gray-800" id="profile">
             <svg
               className="h-6 w-6"
@@ -53,7 +52,6 @@ const Headers = () => {
               />
             </svg>
           </button>
-          <label for="profile">Profile</label>
         </div>
       </nav>
     </>
