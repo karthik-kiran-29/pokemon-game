@@ -1,6 +1,6 @@
 import React from "react";
 
-const HeaderElement = (href,titleName)=>{
+const HeaderElement = ({href,titleName})=>{
     console.log(href,titleName)
 
     return(
