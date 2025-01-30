@@ -9,6 +9,7 @@ import Signin from './pages/Signin';
 import BaseSetCollection from './layouts/BaseSetCollection';
 import Cards from './pages/Cards';
 import LeaderBoard from './pages/LeaderBoard';
+import SingleCard from './pages/SingleCard';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route path='/basesets' element={<BaseSetCollection/>}/>
           <Route path='/cards' element={<Cards/>}/>
           <Route path='/leaderboard' element={<LeaderBoard/>}/>
+          <Route path='/cards/:cardId' element={<SingleCard/>}/>
         </Routes>
       </Router>
       <Footers/>
