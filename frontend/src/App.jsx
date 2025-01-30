@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Signin from './pages/Signin';
 import BaseSetCollection from './layouts/BaseSetCollection';
+import Cards from './pages/Cards';
 
 function App() {
 
@@ -18,7 +19,8 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/signin' element={<Signin/>}/>
-          <Route path='/cards' element={<BaseSetCollection/>}/>
+          <Route path='/basesets' element={<BaseSetCollection/>}/>
+          <Route path='/cards' element={<Cards/>}/>
         </Routes>
       </Router>
       <Footers/>

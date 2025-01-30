@@ -5,6 +5,7 @@ const Headers = () => {
   const heading_content = [
     { href: "/", titleName: "Home" },
     { href: "/cards", titleName: "Cards" },
+    { href: "/basesets", titleName: "Base Sets" },
     { href: "/leaderboard", titleName: "Leader Board" },
     {href:"/profile",titleName:"Profile"},
     {href:"/daily",titleName:"Daily"}
