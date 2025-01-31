@@ -25,7 +25,7 @@ const getAllCards = async (req, res) => {
             ...(req.query.baseSet && { _id: { $regex: req.query.baseSet, $options: 'i' } })
         };
 
-        const result = await CardModel.find(query)
+        const result = await CardModel.find(query,{_id:1,name:1,images:1})
             .skip((page - 1) * limit)
             .limit(limit);
 
