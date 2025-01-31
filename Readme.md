@@ -79,6 +79,6 @@
 - [ ] User Profile Dashboard
 - [ ] Check-in Calendar
 
-##Extra features:
--[ ] /leaderboard for 5 players.
--[ ] /collection for random 5 cards with updates to userModel details.
+## Extra features:
+- [ ] /leaderboard for 5 players.
+- [ ] /collection for random 5 cards with updates to userModel details.

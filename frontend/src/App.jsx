@@ -10,6 +10,7 @@ import BaseSetCollection from './layouts/BaseSetCollection';
 import Cards from './pages/Cards';
 import LeaderBoard from './pages/LeaderBoard';
 import SingleCard from './pages/SingleCard';
+import Daily from './pages/Daily';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           <Route path='/cards' element={<Cards/>}/>
           <Route path='/leaderboard' element={<LeaderBoard/>}/>
           <Route path='/cards/:cardId' element={<SingleCard/>}/>
+          <Route path='/daily' element={<Daily/>}/>
         </Routes>
       </Router>
       <Footers/>
