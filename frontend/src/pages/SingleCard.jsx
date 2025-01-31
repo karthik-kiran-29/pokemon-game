@@ -1,37 +1,19 @@
-import React from "react";
+import React, { useState ,useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Loading from "./Loading";
 
 const SingleCard = () => {
   const { cardId } = useParams();
+  const [pokemon,setPokemon] = useState([]);
+  const [isLoading,setIsLoading] = useState(true);
 
   // Sample pokemon data - replace with your actual data fetching logic
-  const pokemon = {
-    "_id": "base1-1",
-    "name": "Alakazam",
-    "supertype": "Pokémon",
-    "subtypes": ["Stage 2"],
-    "level": "42",
-    "hp": "80",
-    "types": ["Psychic"],
-    "evolvesFrom": "Kadabra",
-    "abilities": [{
-      "name": "Damage Swap",
-      "text": "As often as you like during your turn (before your attack), you may move 1 damage counter from 1 of your Pokémon to another as long as you don't Knock Out that Pokémon. This power can't be used if Alakazam is Asleep, Confused, or Paralyzed.",
-      "type": "Pokémon Power"
-    }],
-    "attacks": [{
-      "name": "Confuse Ray",
-      "cost": ["Psychic", "Psychic", "Psychic"],
-      "damage": "30",
-      "text": "Flip a coin. If heads, the Defending Pokémon is now Confused."
-    }],
-    "weaknesses": [{ "type": "Psychic", "value": "×2" }],
-    "retreatCost": ["Colorless", "Colorless", "Colorless"],
-    "artist": "Ken Sugimori",
-    "rarity": "Rare Holo",
-    "flavorText": "Its brain can outperform a supercomputer. Its intelligence quotient is said to be 5000.",
-    "nationalPokedexNumbers": [65]
-  };
+  
+  useEffect(()=>{
+    fetch( process.env.REACT_APP_API_URL + "/cards/" + cardId)
+          .then(res => res.json())
+          .then( res => {setPokemon(res.result[0]);setIsLoading(false)})
+  },[])
 
   const renderEnergyType = (type) => {
     const typeColors = {
@@ -60,6 +42,11 @@ const SingleCard = () => {
       <path d="M19 12H5M12 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   );
+  
+  if(isLoading == true){
+    return(<Loading/>);
+  }
+
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
@@ -80,7 +67,7 @@ const SingleCard = () => {
               {/* Card Image */}
               <div className="w-full md:w-1/3">
                 <img
-                  src="/api/placeholder/400/560"
+                  src={pokemon.images.small}
                   alt={pokemon.name}
                   className="w-full rounded-lg shadow-md"
                 />

@@ -11,6 +11,7 @@ import Cards from './pages/Cards';
 import LeaderBoard from './pages/LeaderBoard';
 import SingleCard from './pages/SingleCard';
 import Daily from './pages/Daily';
+import Loading from './pages/Loading';
 
 function App() {
 

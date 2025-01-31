@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SingleCard from '../pages/SingleCard';
 
 const PokemonCard = ({ pokemon }) => {
   
