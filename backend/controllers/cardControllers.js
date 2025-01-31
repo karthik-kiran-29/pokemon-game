@@ -15,7 +15,7 @@ const getSingleCard = async (req,res) =>{
 // implementing pagination using limit and skip with params
 const getAllCards = async (req, res) => {
     const page = parseInt(req.query.page) || 1;
-    const limit = 10;
+    const limit = 12;
 
     try {
         const query = {
