@@ -10,7 +10,7 @@ const SingleCard = () => {
   // Sample pokemon data - replace with your actual data fetching logic
   
   useEffect(()=>{
-    fetch( process.env.REACT_APP_API_URL + "/cards/" + cardId)
+    fetch( process.env.REACT_APP_API_URL + "/cards/" + cardId) // add search bar login here bro
           .then(res => res.json())
           .then( res => {setPokemon(res.result[0]);setIsLoading(false)})
   },[])

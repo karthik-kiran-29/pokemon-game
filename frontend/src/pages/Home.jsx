@@ -6,7 +6,7 @@ const Home = () => {
       <div className="flex flex-col md:flex-row items-center bg-white overflow-hidden">
         <div className="w-full md:w-2/5 p-4">
           <img 
-            src="static/pokemon.png" 
+            src="https://wallpapers.com/images/featured-full/ash-and-pikachu-hd-8ht07p87535apley.jpg" 
             alt="Pokémon Daily Login"
             className="w-full h-auto object-cover rounded-lg  transform transition-transform duration-300 hover:scale-105"
           />
