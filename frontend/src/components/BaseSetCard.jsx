@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const BaseSetCard = ({images,name,total}) => {
   return (
+    <Link to={"/cards?baseset=" + name}>
     <div className="bg-white rounded-lg shadow-md overflow-hidden w-64 max-w-xs">
       <img 
         src={images.logo} 
@@ -13,6 +15,7 @@ const BaseSetCard = ({images,name,total}) => {
         <h2 className="text-lg font-semibold text-gray-800">{total} Cards</h2>
       </div>
     </div>
+    </Link>
   );
 };
 
