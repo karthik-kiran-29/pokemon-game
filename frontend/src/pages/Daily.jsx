@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 
-const pokemonCards = [
-  { id: 1, name: 'Pikachu', image: '/api/placeholder/200/300' },
-  { id: 2, name: 'Charizard', image: '/api/placeholder/200/300' },
-  { id: 3, name: 'Blastoise', image: '/api/placeholder/200/300' },
-  { id: 4, name: 'Mewtwo', image: '/api/placeholder/200/300' },
-  { id: 5, name: 'Gengar', image: '/api/placeholder/200/300' }
-];
+
 
 const Daily = () => {
   const [stage, setStage] = useState('initial');
   const [revealedCards, setRevealedCards] = useState([]);
+  const [pokemonCards,setPokemonCards] = useState([]);
+
+  useEffect(()=>{
+    fetch( process.env.REACT_APP_API_URL + "/random") 
+          .then(res => res.json())
+          .then( res => {setPokemonCards(res.result);console.log(res)})
+  },[])
 
   const handleLoginClick = () => {
     setStage('collect');
@@ -41,7 +42,7 @@ const Daily = () => {
             <div className="grid grid-cols-5 gap-4 mb-8 opacity-50">
               {pokemonCards.map(card => (
                 <div 
-                  key={card.id} 
+                  key={card._id} 
                   className="w-40 h-60 bg-gray-300 blur-sm"
                 ></div>
               ))}
@@ -61,11 +62,11 @@ const Daily = () => {
             <div className="grid grid-cols-5 gap-4">
               {revealedCards.map(card => (
                 <div 
-                  key={card.id} 
+                  key={card._id} 
                   className="w-40 h-60 bg-white shadow-lg rounded-lg overflow-hidden"
                 >
                   <img 
-                    src={card.image} 
+                    src={card.images.large} 
                     alt={card.name} 
                     className="w-full h-full object-cover"
                   />
