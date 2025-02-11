@@ -22,6 +22,11 @@ const Cards = ()=>{
               <PokemonCard key={index} pokemon={card} />
               ))}
           </div>
+          {pokemonData.length === 0 && (
+        <p className="text-center text-gray-500 mt-10">
+          Oopsie ! no pokemon found..
+        </p>
+      )}
         </div>
       )
 }

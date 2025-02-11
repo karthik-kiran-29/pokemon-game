@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Search = ()=>{
     const navigate = useNavigate();
     const [keyword,setKeyword] = useState("");
+    let location = useLocation();
     
-    const onClickHandler = () =>{
-        navigate("/cards?name=" + keyword);
-    }
+    const onClickHandler = () => {
+      const searchParams = new URLSearchParams(location.search);
+      searchParams.set('name', keyword);
+      navigate(`${location.pathname}?${searchParams.toString()}`);
+  }
 
     return(
         <>
