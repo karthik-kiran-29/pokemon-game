@@ -5,8 +5,7 @@ const LeaderBoard = () => {
   const leaderboardData = [
     { position: 1, name: "kazomako" },
     { position: 2, name: "player2" },
-    { position: 3, name: "player3" },
-    { position: 4, name: "player4" }
+    { position: 3, name: "player3" }
   ];
 
   return (
