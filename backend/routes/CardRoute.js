@@ -1,5 +1,5 @@
 import express from 'express';
-import { getAllCards, getSingleCard } from '../controllers/cardControllers.js';
+import { getAllCards, getRandomCards, getSingleCard } from '../controllers/cardControllers.js';
 
 
 const router = express.Router();
@@ -7,6 +7,8 @@ const router = express.Router();
 router.route('/cards').get(getAllCards)
 
 router.route('/cards/:cardId').get(getSingleCard);
+
+router.route('/random').get(getRandomCards);
 
 
 

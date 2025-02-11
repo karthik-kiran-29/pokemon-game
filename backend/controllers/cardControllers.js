@@ -43,4 +43,15 @@ const getAllCards = async (req, res) => {
     }
 };
 
-export {getSingleCard,getAllCards};
+const getRandomCards =async (req,res)=>{
+    const CardCount = 5;
+    const aggregate = CardModel.aggregate([{$project:{_id:1,name:1,images:1}}]);
+    try {
+        const result = await aggregate.sample(CardCount);
+        res.json({status:"success",result})
+    } catch (error) {
+        res.status(500).json({ status: "failed", error: error.message });
+    }
+}
+
+export {getSingleCard,getAllCards,getRandomCards};
