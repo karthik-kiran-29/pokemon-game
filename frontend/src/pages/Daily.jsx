@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from 'react';
+import PokemonCard from '../components/PokemonCard';
 
 
 
@@ -14,12 +15,7 @@ const Daily = () => {
   },[])
 
   const handleLoginClick = () => {
-    setStage('collect');
-  };
-
-  const handleCollectClick = () => {
     setStage('revealed');
-    setRevealedCards(pokemonCards);
   };
 
   const renderContent = () => {
@@ -36,42 +32,12 @@ const Daily = () => {
           </div>
         );
 
-      case 'collect':
-        return (
-          <div className="flex flex-col items-center justify-center h-screen bg-gray-100 p-4">
-            <div className="grid grid-cols-5 gap-4 mb-8 opacity-50">
-              {pokemonCards.map(card => (
-                <div 
-                  key={card._id} 
-                  className="w-40 h-60 bg-gray-300 blur-sm"
-                ></div>
-              ))}
-            </div>
-            <button 
-              onClick={handleCollectClick}
-              className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition"
-            >
-              Collect Cards
-            </button>
-          </div>
-        );
-
       case 'revealed':
         return (
           <div className="flex flex-col items-center justify-center h-screen bg-gray-100 p-4">
-            <div className="grid grid-cols-5 gap-4">
-              {revealedCards.map(card => (
-                <div 
-                  key={card._id} 
-                  className="w-40 h-60 bg-white shadow-lg rounded-lg overflow-hidden"
-                >
-                  <img 
-                    src={card.images.large} 
-                    alt={card.name} 
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="p-2 text-center">{card.name}</div>
-                </div>
+            <div className="grid grid-cols-3 ">
+              {pokemonCards.map(card => (
+                     <PokemonCard pokemon={card}/>
               ))}
             </div>
           </div>

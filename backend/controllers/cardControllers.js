@@ -44,7 +44,7 @@ const getAllCards = async (req, res) => {
 };
 
 const getRandomCards =async (req,res)=>{
-    const CardCount = 5;
+    const CardCount = 3;
     const aggregate = CardModel.aggregate([{$project:{_id:1,name:1,images:1}}]);
     try {
         const result = await aggregate.sample(CardCount);
