@@ -12,6 +12,7 @@ import LeaderBoard from './pages/LeaderBoard';
 import SingleCard from './pages/SingleCard';
 import Daily from './pages/Daily';
 import Loading from './pages/Loading';
+import Profile from './pages/Profile';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
           <Route path='/leaderboard' element={<LeaderBoard/>}/>
           <Route path='/cards/:cardId' element={<SingleCard/>}/>
           <Route path='/daily' element={<Daily/>}/>
+          <Route path='/profile' element={<Profile/>}/>
         </Routes>
       </Router>
       <Footers/>
