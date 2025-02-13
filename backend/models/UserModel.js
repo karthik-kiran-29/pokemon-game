@@ -6,11 +6,10 @@ const userSchema = new mongoose.Schema(
         email: { type: String, required: true, unique: true },
         
         // Collection management
-        collection: [{
+        collections: [{
           cardId: { type: mongoose.Schema.Types.ObjectId, ref: 'Card' },
           acquiredAt: Date,
           quantity: { type: Number, default: 1 },
-          condition: String,
           isFavorite: { type: Boolean, default: false }
         }],
         
